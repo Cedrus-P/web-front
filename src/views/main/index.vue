@@ -1,5 +1,9 @@
-<script setup lang="js"></script>
+<script setup>
+import navigationVue from './components/navigation/index.vue'
+</script>
 <template>
-  <div class="demo-container">移动端首页</div>
+  <div class="demo-container">
+    <navigation-vue></navigation-vue>
+  </div>
 </template>
 <style lang="scss" scoped></style>
