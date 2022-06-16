@@ -1,11 +1,11 @@
 <script setup>
-import { getCatgory } from '@/api/category'
+import { getCategory } from '@/api/category'
 
-const getCatgoryData = async () => {
-  const res = await getCatgory()
+const getCategoryData = async () => {
+  const res = await getCategory()
   console.log(res)
 }
-getCatgoryData()
+getCategoryData()
 </script>
 <template>
   <div class="demo-container">我是移动端下navigation</div>
