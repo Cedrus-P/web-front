@@ -7,7 +7,24 @@ const service = axios.create({
   timeout: 5000
 })
 
-// 请求拦截器
+/**
+ * 响应拦截器：
+ * 服务器返回数据之后，前端 .then 之前被调用
+ */
+service.interceptors.response.use((response) => {
+  const { success, message, data } = response.data
+  // 判断 success 是否为 true , 直接获取 categorys
+  if (success) {
+    return data
+  } else {
+    // TODO: 业务错误
+    return Promise.reject(new Error(message))
+  }
+})
+
+/**
+ * 请求拦截器
+ */
 service.interceptors.request.use((config) => {
   // 添加 icode
   config.headers.icode = 'C00EEAAFA1D565C0'
