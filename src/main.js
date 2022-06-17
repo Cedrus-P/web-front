@@ -5,6 +5,10 @@ import './styles/index.scss'
 import router from './router'
 // rem 基准值
 import { useREM } from './utils/flexible'
-useREM()
+// 组件注册
+import mLibs from './libs'
+import 'virtual:svg-icons-register'
 
+useREM()
+createApp(App).use(mLibs)
 createApp(App).use(router).mount('#app')
