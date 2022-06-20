@@ -1,5 +1,6 @@
 <script setup>
 import mSvgIcon from '@/libs/svg-icon/index.vue'
+import mPopup from '@/libs/popup/index.vue'
 import { ref, watch, onBeforeUpdate } from 'vue'
 import { useScroll } from '@vueuse/core'
 
@@ -52,6 +53,12 @@ watch(currentCategoryIndex, (val) => {
 const onItemClick = (index) => {
   currentCategoryIndex.value = index
 }
+
+// 控制popup展示
+const isVisable = ref(false)
+const onShowPopup = () => {
+  isVisable.value = true
+}
 </script>
 <template>
   <div class="bg-white sticky top-0 left-0 z-10">
@@ -67,6 +74,7 @@ const onItemClick = (index) => {
       ></li>
       <!-- 汉堡按钮 -->
       <li
+        @click="onShowPopup"
         class="z-20 fixed right-[-1px] h-4 px-1 flex items-center bg-white shadow-l-white"
       >
         <m-svg-icon class="w-1.5 h-1.5" name="hamburger"></m-svg-icon>
@@ -86,6 +94,7 @@ const onItemClick = (index) => {
         {{ item.name }}
       </li>
     </ul>
+    <m-popup v-model="isVisable"></m-popup>
   </div>
 </template>
 
