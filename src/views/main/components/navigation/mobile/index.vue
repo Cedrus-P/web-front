@@ -1,6 +1,7 @@
 <script setup>
 import mSvgIcon from '@/libs/svg-icon/index.vue'
 import mPopup from '@/libs/popup/index.vue'
+import menuVue from '../../menu/index.vue'
 import { ref, watch, onBeforeUpdate } from 'vue'
 import { useScroll } from '@vueuse/core'
 
@@ -42,6 +43,16 @@ const { x: ulScrollLeft } = useScroll(ulTarget)
 // watch监听
 watch(currentCategoryIndex, (val) => {
   const { left, width } = itemRefs[val].getBoundingClientRect()
+
+  // 平滑滚动
+  ulTarget.value.scrollTo({
+    left:
+      left + width + 40 > window.innerWidth || left < 0
+        ? ulTarget.value.scrollLeft + left - (window.innerWidth - width) / 2
+        : ulScrollLeft.value,
+    behavior: 'smooth'
+  })
+
   sliderStyle.value = {
     // 滑块的位置 = ul横向滚动的位置 + 当前元素的left - ul的padding
     transform: `translateX(${ulScrollLeft.value + left - 10}px)`,
@@ -52,6 +63,7 @@ watch(currentCategoryIndex, (val) => {
 // item 点击事件
 const onItemClick = (index) => {
   currentCategoryIndex.value = index
+  isVisable.value = false
 }
 
 // 控制popup展示
@@ -70,7 +82,7 @@ const onShowPopup = () => {
       <li
         ref="sliderTarget"
         :style="sliderStyle"
-        class="absolute h-[25px] bg-slate-400 rounded-lg duration-200"
+        class="absolute h-[25px] bg-slate-400 rounded-lg duration-300"
       ></li>
       <!-- 汉堡按钮 -->
       <li
@@ -89,12 +101,14 @@ const onShowPopup = () => {
         :class="{
           'text-zinc-100': currentCategoryIndex === index
         }"
-        class="shrink-0 px-1.5 py-0.5 z-10 duration-200 last:mr-4"
+        class="shrink-0 px-1.5 py-0.5 z-10 duration-300 last:mr-4"
       >
         {{ item.name }}
       </li>
     </ul>
-    <m-popup v-model="isVisable"></m-popup>
+    <m-popup v-model="isVisable">
+      <menu-vue :categorys="data" @onItemClick="onItemClick"></menu-vue>
+    </m-popup>
   </div>
 </template>
 

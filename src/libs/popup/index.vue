@@ -42,7 +42,6 @@ watch(
           v-bind="$attrs"
           class="w-screen bg-white z-50 fixed bottom-0"
         >
-          <div>我是内容</div>
           <slot />
         </div>
       </transition>
