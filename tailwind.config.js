@@ -16,6 +16,10 @@ module.exports = {
       height: {
         header: '72px',
         main: 'calc(100vh - 72px)'
+      },
+      colors: {
+        main: '#55d5f5',
+        'hover-main': '#00aabb'
       }
     }
   },

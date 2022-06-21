@@ -1,5 +1,16 @@
-<script setup lang="ts"></script>
 <template>
-  <div class="demo-container">search</div>
+  <div class="w-full">
+    <m-search v-model="inputValue">
+      <template #dropdown>
+        <div>dropdown</div>
+      </template>
+    </m-search>
+  </div>
 </template>
-<style lang="scss" scoped></style>
+
+<script setup>
+import { ref } from 'vue'
+import mSearch from '@/libs/search/index.vue'
+
+const inputValue = ref('')
+</script>
