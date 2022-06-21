@@ -48,7 +48,7 @@ watch(currentCategoryIndex, (val) => {
   ulTarget.value.scrollTo({
     left:
       left + width + 40 > window.innerWidth || left < 0
-        ? ulTarget.value.scrollLeft + left - (window.innerWidth - width) / 2
+        ? ulTarget.value.scrollLeft + left - 10
         : ulScrollLeft.value,
     behavior: 'smooth'
   })
