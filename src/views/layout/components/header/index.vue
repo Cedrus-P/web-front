@@ -4,6 +4,7 @@ import headerThemeVue from './header-theme.vue'
 import headerMyVue from './header-my.vue'
 import { useRouter } from 'vue-router'
 
+// router === this.$router
 const router = useRouter()
 const onToHome = () => {
   router.push('/')
@@ -13,11 +14,10 @@ const onToHome = () => {
   <div
     class="w-full flex items-center bg-white border-b border-b-zinc-100 px-2 py-1"
   >
-    <div class="flex items-center justify-between">
+    <div class="w-full flex items-center justify-between">
       <img
         src="@/assets/common/img/hina.png"
-        alt=""
-        class="h-[50px]"
+        class="h-4 cursor-pointer mr-2"
         @click="onToHome"
       />
       <header-search-vue class="mr-1"></header-search-vue>
