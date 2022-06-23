@@ -29,13 +29,13 @@
       ></m-svg-icon>
       <!-- 分割线 -->
       <div
-        class="opacity-0 h-1.5 w-[1px] absolute translate-y-[-50%] top-[50%] right-[62px] duration-500 bg-zinc-200 group-hover:opacity-100"
+        class="opacity-0 h-1.5 w-[1px] absolute translate-y-[-50%] top-[50%] right-9 duration-500 bg-zinc-200 group-hover:opacity-100"
       ></div>
       <!-- TODO: 搜索按钮(通用组件) -->
       <m-button
-        class="absolute translate-y-[-50%] top-[50%] right-1 rounded-xl duration-500 opacity-0 group-hover:opacity-100"
+        class="absolute h-3 w-6 translate-y-[-50%] top-[50%] right-2 bg-teal-600/60 rounded-3xl duration-500 opacity-0 group-hover:opacity-100"
         icon="search"
-        iconColor="#000000"
+        iconColor="#ffffff"
         @click="onSearchHandlder"
       ></m-button>
     </div>
@@ -44,7 +44,7 @@
       <div
         v-if="$slots.dropdown"
         v-show="isFocus"
-        class="max-h-[368px] w-full text-base overflow-auto bg-white dark:bg-zinc-800 absolute z-20 left-0 top-[56px] p-2 rounded border border-zinc-200 dark:border-zinc-600 duration-200 hover:shadow-3xl scrollbar-thin scrollbar-thumb-zinc-200 dark:scrollbar-thumb-zinc-900 scrollbar-track-transparent"
+        class="max-h-[368px] w-full text-base overflow-auto bg-white dark:bg-zinc-800 absolute z-20 left-0 top-[56px] p-2 rounded border border-zinc-200 dark:border-zinc-600 duration-200 hover:shadow-xl scrollbar-thin scrollbar-thumb-zinc-200 dark:scrollbar-thumb-zinc-900 scrollbar-track-transparent"
       >
         <slot name="dropdown" />
       </div>
