@@ -37,12 +37,16 @@ const themeArr = [
         ></m-svg-icon>
       </template>
       <!-- 匿名插槽 -->
-      <div class="w-[140px] overflow-hidden">
+      <div
+        class="w-[140px] overflow-hidden"
+        v-for="item in themeArr"
+        :key="item.id"
+      >
         <div
           class="flex items-center p-1 cursor-pointer rounded hover:bg-slate-200/40"
         >
           <m-svg-icon
-            name="item.icon"
+            :name="item.icon"
             fillClass="fill-zinc-900"
             class="w-1.5 h-1.5 mr-1"
           ></m-svg-icon>
