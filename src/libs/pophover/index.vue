@@ -51,17 +51,30 @@ const props = defineProps({
 
 const isVisable = ref(false)
 
+// 防抖
+// 延迟关闭时长
+const DELAY_TIME = 100
+// 控制延迟关闭
+let timeout = null
 /**
- * 鼠标移入触发
+ * 鼠标移入的触发行为
  */
-const onMouseenter = () => {
+const onMouseEnter = () => {
   isVisable.value = true
+  // 再次触发时，清理延时装置
+  if (timeout) {
+    clearTimeout(timeout)
+  }
 }
 /**
- * 鼠标移出触发
+ * 鼠标移出的触发行为
  */
 const onMouseLeave = () => {
-  isVisable.value = false
+  // 延时装置
+  timeout = setTimeout(() => {
+    isVisable.value = false
+    timeout = null
+  }, DELAY_TIME)
 }
 
 /**
@@ -127,7 +140,7 @@ watch(isVisable, (val) => {
 </script>
 
 <template>
-  <div class="relative" @mouseenter="onMouseenter" @mouseleave="onMouseLeave">
+  <div class="relative" @mouseenter="onMouseEnter" @mouseleave="onMouseLeave">
     <div ref="referenceTarget">
       <!-- 具名插槽：触发弹层的视图 -->
       <slot name="reference"> </slot>
