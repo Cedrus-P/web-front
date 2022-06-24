@@ -47,10 +47,10 @@ const themeArr = [
         >
           <m-svg-icon
             :name="item.icon"
-            fillClass="fill-zinc-900"
+            fillClass="fill-zinc-600"
             class="w-1.5 h-1.5 mr-1"
           ></m-svg-icon>
-          <span class="text-zinc-800 text-sm">{{ item.name }}</span>
+          <span class="text-zinc-600 text-sm">{{ item.name }}</span>
         </div>
       </div>
     </m-pophover>

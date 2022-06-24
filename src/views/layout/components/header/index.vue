@@ -17,7 +17,7 @@ const onToHome = () => {
     <div class="w-full flex items-center justify-between">
       <img
         src="@/assets/common/img/hina.png"
-        class="h-4 cursor-pointer mr-2"
+        class="h-4 cursor-pointer ml-1 mr-1"
         @click="onToHome"
       />
       <header-search-vue class="mr-1"></header-search-vue>
