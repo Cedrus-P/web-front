@@ -53,7 +53,7 @@ const isVisable = ref(false)
 
 // 防抖
 // 延迟关闭时长
-const DELAY_TIME = 100
+const DELAY_TIME = 300
 // 控制延迟关闭
 let timeout = null
 /**
@@ -127,8 +127,8 @@ watch(isVisable, (val) => {
         contentStyle.value.left =
           -useElementSize(contentTarget.value).width + 'px'
         break
-      // 右上
-      case PROP_DIRACTION.TOP_LEFT:
+      // 右下
+      case PROP_DIRACTION.BOTTOM_RIGHT:
         contentStyle.value.top =
           useElementSize(referenceTarget.value).height + 10 + 'px'
         contentStyle.value.left =
