@@ -1,22 +1,14 @@
+<template>
+  <mobile-navigation-vue v-if="isMobileTerminal" />
+</template>
+
 <script setup>
 import { isMobileTerminal } from '@/utils/flexible'
 import mobileNavigationVue from './mobile/index.vue'
-import { getCategory } from '@/api/category'
-import { ref } from 'vue'
-import { ALL_CATEGORY_ITEM } from '@/constants'
+import { useStore } from 'vuex'
 
-const categoryData = ref([])
-const getCategoryData = async () => {
-  const { categorys } = await getCategory()
-  categoryData.value = categorys
-  categoryData.value.unshift(ALL_CATEGORY_ITEM)
-}
-getCategoryData()
+const store = useStore()
+// 触发 category 数据获取动作
+store.dispatch('category/useCategoryData')
+// console.log(store)
 </script>
-<template>
-  <mobile-navigation-vue
-    v-if="isMobileTerminal"
-    :data="categoryData"
-  ></mobile-navigation-vue>
-</template>
-<style lang="scss" scoped></style>
