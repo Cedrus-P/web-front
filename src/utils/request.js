@@ -27,7 +27,7 @@ service.interceptors.response.use((response) => {
  */
 service.interceptors.request.use((config) => {
   // 添加 icode
-  config.headers.icode = 'C00EEAAFA1D565C09C59C01481D2C890'
+  config.headers.icode = '9C59C01481D2C890'
   // 必须返回 config
   return config
 })

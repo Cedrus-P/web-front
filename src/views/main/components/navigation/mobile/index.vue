@@ -5,14 +5,6 @@ import menuVue from '../../menu/index.vue'
 import { ref, watch, onBeforeUpdate } from 'vue'
 import { useScroll } from '@vueuse/core'
 
-// vite 构建的项目中，我们可以使用 defineProps 方法
-defineProps({
-  data: {
-    type: Array,
-    required: true
-  }
-})
-
 // 滑块样式
 const sliderStyle = ref({
   transform: 'translateX(0px)',
@@ -72,6 +64,7 @@ const onShowPopup = () => {
   isVisable.value = true
 }
 </script>
+
 <template>
   <div class="bg-white sticky top-0 left-0 z-10">
     <ul
@@ -94,7 +87,7 @@ const onShowPopup = () => {
 
       <!-- category item -->
       <li
-        v-for="(item, index) in data"
+        v-for="(item, index) in $store.getters.categorys"
         :key="item.id"
         :ref="setItemRef"
         @click="onItemClick(index)"
@@ -107,7 +100,7 @@ const onShowPopup = () => {
       </li>
     </ul>
     <m-popup v-model="isVisable">
-      <menu-vue :categorys="data" @onItemClick="onItemClick"></menu-vue>
+      <menu-vue @onItemClick="onItemClick"></menu-vue>
     </m-popup>
   </div>
 </template>

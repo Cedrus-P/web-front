@@ -11,4 +11,4 @@ import mLibs from './libs'
 import 'virtual:svg-icons-register'
 
 useREM()
-createApp(App).use(mLibs).store(router).use(router).mount('#app')
+createApp(App).use(mLibs).use(store).use(router).mount('#app')

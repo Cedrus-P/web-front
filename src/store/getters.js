@@ -1,2 +1,3 @@
-// 全局状态访问处理
-export default {}
+export default {
+  categorys: (state) => state.category.categorys
+}
