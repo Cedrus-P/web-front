@@ -2,7 +2,7 @@
 import navigationVue from './components/navigation/index.vue'
 </script>
 <template>
-  <div class="demo-container">
+  <div class="">
     <navigation-vue></navigation-vue>
   </div>
 </template>

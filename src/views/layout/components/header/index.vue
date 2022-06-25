@@ -12,17 +12,23 @@ const onToHome = () => {
 </script>
 <template>
   <div
-    class="w-full flex items-center bg-white border-b border-b-zinc-100 px-2 py-1"
+    class="w-full h-6 flex items-center bg-white border-b border-b-zinc-100 px-2 py-1"
   >
-    <div class="w-full flex items-center justify-between">
-      <img
-        src="@/assets/common/img/hina.png"
-        class="h-4 cursor-pointer ml-1 mr-1"
-        @click="onToHome"
-      />
-      <header-search-vue class="mr-1"></header-search-vue>
-      <header-theme-vue class="mr-1"></header-theme-vue>
-      <header-my-vue></header-my-vue>
+    <div class="flex w-full items-center justify-between">
+      <div class="flex items-center">
+        <img
+          src="@/assets/common/img/hina.png"
+          class="h-4 cursor-pointer ml-1 mr-1"
+          @click="onToHome"
+        />
+        <header-search-vue
+          class="mr-1 w-[20vw] min-w-[250px] duration-200"
+        ></header-search-vue>
+      </div>
+      <div class="flex items-center">
+        <header-theme-vue class="mr-1"></header-theme-vue>
+        <header-my-vue></header-my-vue>
+      </div>
     </div>
   </div>
 </template>

@@ -34,14 +34,14 @@ const menuArr = [
         <img src="src/assets/common/img/avatar.jpg" class="w-4 rounded-xl" />
         <!-- 下箭头 -->
         <m-svg-icon
-          class="h-2 w-2 ml-0.5"
+          class="h-1.5 w-1.5 ml-0.5"
           name="down-arrow"
           fillClass="fill-zinc-800"
         ></m-svg-icon>
         <!-- vip 标记 -->
         <m-svg-icon
           name="vip"
-          class="w-1.5 h-1.5 absolute right-[20px] bottom-0"
+          class="w-1.5 h-1.5 absolute right-[30px] bottom-0"
         ></m-svg-icon>
       </div>
     </template>
