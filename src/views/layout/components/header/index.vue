@@ -12,7 +12,7 @@ const onToHome = () => {
 </script>
 <template>
   <div
-    class="w-full h-6 flex items-center bg-white border-b border-b-zinc-100 px-2 py-1"
+    class="w-full h-6 flex items-center dark:bg-slate-800 dark:border-b-slate-700 bg-white border-b border-b-zinc-100 px-2 py-1"
   >
     <div class="flex w-full items-center justify-between">
       <div class="flex items-center">

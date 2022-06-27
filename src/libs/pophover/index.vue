@@ -125,7 +125,7 @@ watch(isVisable, (val) => {
         contentStyle.value.top =
           useElementSize(referenceTarget.value).height + 10 + 'px'
         contentStyle.value.left =
-          -useElementSize(contentTarget.value).width + 'px'
+          (-useElementSize(contentTarget.value).width * 3) / 4 + 'px'
         break
       // 右下
       case PROP_DIRACTION.BOTTOM_RIGHT:

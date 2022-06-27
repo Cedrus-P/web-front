@@ -66,21 +66,21 @@ const onShowPopup = () => {
 </script>
 
 <template>
-  <div class="bg-white sticky top-0 left-0 z-10">
+  <div class="bg-white dark:bg-slate-800 sticky top-0 left-0 z-10">
     <ul
       ref="ulTarget"
-      class="relative flex overflow-x-auto items-center p-1 text-xs text-zinc-600 overflow-hidden"
+      class="relative flex overflow-x-auto items-center p-1 text-xs text-zinc-600 dark:text-zinc-300 overflow-hidden"
     >
       <!-- 滑块 -->
       <li
         ref="sliderTarget"
         :style="sliderStyle"
-        class="absolute h-[25px] bg-slate-400 rounded-lg duration-300"
+        class="absolute h-[25px] dark:bg-slate-600 bg-slate-400 rounded-lg duration-300"
       ></li>
       <!-- 汉堡按钮 -->
       <li
         @click="onShowPopup"
-        class="z-20 fixed right-[-1px] h-4 px-1 flex items-center bg-white shadow-l-white"
+        class="z-20 fixed dark:bg-slate-900 dark:shadow-l-slate right-[-1px] h-4 px-1 flex items-center bg-white shadow-l-white"
       >
         <m-svg-icon class="w-1.5 h-1.5" name="hamburger"></m-svg-icon>
       </li>

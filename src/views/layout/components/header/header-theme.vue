@@ -32,25 +32,27 @@ const themeArr = [
       <template #reference>
         <m-svg-icon
           name="theme-light"
-          fillClass="fill-zinc-900"
-          class="w-4 h-4 p-1 cursor-pointer rounded-xl duration-200 outline-none hover:bg-slate-200/40"
+          fillClass="fill-zinc-900 dark:fill-slate-300"
+          class="w-4 h-4 p-1 dark:hover:bg-slate-900 cursor-pointer rounded-xl duration-200 outline-none hover:bg-slate-200/40"
         ></m-svg-icon>
       </template>
       <!-- 匿名插槽 -->
       <div
-        class="w-[140px] overflow-hidden"
+        class="w-[140px] overflow-hidden dark:bg-slate-800 dark:border-b-slate-700"
         v-for="item in themeArr"
         :key="item.id"
       >
         <div
-          class="flex items-center p-1 cursor-pointer rounded hover:bg-slate-200/40"
+          class="flex dark:hover:bg-slate-700 items-center p-1 cursor-pointer rounded hover:bg-slate-200/40"
         >
           <m-svg-icon
             :name="item.icon"
-            fillClass="fill-zinc-600"
+            fillClass="fill-zinc-600 dark:fill-slate-300"
             class="w-1.5 h-1.5 mr-1"
           ></m-svg-icon>
-          <span class="text-zinc-600 text-sm">{{ item.name }}</span>
+          <span class="text-zinc-600 dark:text-slate-300 text-sm">{{
+            item.name
+          }}</span>
         </div>
       </div>
     </m-pophover>

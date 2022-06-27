@@ -1,4 +1,6 @@
 module.exports = {
+  // 手动切换暗模式
+  darkMode: 'class',
   // tailwind 应用范围
   content: ['./index.html', './src/**/*.{vue,js}'],
   theme: {
@@ -11,7 +13,8 @@ module.exports = {
         xl: ['0.65rem', '0.75rem']
       },
       boxShadow: {
-        'l-white': '-10px 0 10px white'
+        'l-white': '-10px 0 10px white',
+        'l-slate': '-10px 0 10px #18181b'
       },
       height: {
         header: '72px',
