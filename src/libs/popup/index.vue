@@ -40,7 +40,7 @@ watch(
         <div
           v-if="isOpen"
           v-bind="$attrs"
-          class="w-screen bg-white z-50 fixed bottom-0"
+          class="w-screen bg-white dark:bg-slate-800 z-50 fixed bottom-0"
         >
           <slot />
         </div>
