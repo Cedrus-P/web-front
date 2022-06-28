@@ -21,7 +21,7 @@ const onItemClick = (index) => {
   <div class="sticky dark:bg-slate-900 top-0 left-0 w-full">
     <ul
       :class="[isOpenCategoty ? 'h-[206px]' : 'h-[56px]']"
-      class="w-[800px] relative flex flex-wrap justify-center overflow-x-auto px-[10px] py-1 text-xs text-zinc-300 duration-300 overflow-hidden mx-auto"
+      class="w-[800px] relative flex flex-wrap justify-center overflow-x-auto px-[10px] py-1 text-xs text-zinc-600 dark:text-slate-300 duration-300 overflow-hidden mx-auto"
     >
       <!-- lg 下展开箭头 -->
       <div
