@@ -9,6 +9,8 @@ import { useREM } from './utils/flexible'
 // 组件注册
 import mLibs from './libs'
 import 'virtual:svg-icons-register'
-
+import useTheme from './utils/theme'
+// 初始化主题
+useTheme()
 useREM()
 createApp(App).use(mLibs).use(store).use(router).mount('#app')

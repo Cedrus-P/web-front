@@ -1,6 +1,6 @@
 <template>
-  <mobile-navigation-vue v-if="isMobileTerminal" />
-  <pc-navigation-vue v-else />
+  <mobile-navigation-vue v-if="isMobileTerminal" class="duration-500" />
+  <pc-navigation-vue v-else class="duration-500" />
 </template>
 
 <script setup>

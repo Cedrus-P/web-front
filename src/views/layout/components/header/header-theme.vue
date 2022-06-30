@@ -25,13 +25,30 @@ const themeArr = [
     name: '跟随系统'
   }
 ]
+/**
+ * menu 切换事件
+ * @param {*} theme
+ */
+const onItemClick = (theme) => {
+  store.commit('theme/changeThemeType', theme.type)
+}
+
+// 控制图标展示
+const store = useStore()
+const svgIconName = computed(() => {
+  // 根据当前的 themeType 返回当前的选中 icon
+  const findTheme = themeArr.find((theme) => {
+    return theme.type === store.getters.themeType
+  })
+  return findTheme.icon
+})
 </script>
 <template>
   <div class="demo-container">
     <m-pophover placement="bottom-left">
       <template #reference>
         <m-svg-icon
-          name="theme-light"
+          :name="svgIconName"
           fillClass="fill-zinc-900 dark:fill-slate-300"
           class="w-4 h-4 p-1 dark:hover:bg-slate-900 cursor-pointer rounded-xl duration-200 outline-none hover:bg-slate-200/40"
         ></m-svg-icon>
@@ -41,6 +58,7 @@ const themeArr = [
         class="w-[140px] overflow-hidden dark:bg-slate-800 dark:border-b-slate-700"
         v-for="item in themeArr"
         :key="item.id"
+        @click="onItemClick"
       >
         <div
           class="flex dark:hover:bg-slate-700 items-center p-1 cursor-pointer rounded hover:bg-slate-200/40"
