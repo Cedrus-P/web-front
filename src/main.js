@@ -13,4 +13,4 @@ import useTheme from './utils/theme'
 // 初始化主题
 useTheme()
 useREM()
-createApp(App).use(mLibs).use(store).use(router).mount('#app')
+createApp(App).use(mLibs).use(router).use(store).mount('#app')
